@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="games.css">
+</head>
+<body>
+    <!-- 背景装饰元素 -->
+    <div class="decorations">
+        <div class="lantern left"></div>
+        <div class="lantern right"></div>
+        <div class="fu-character"></div>
+        <div class="spring-character"></div>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="index.html">倒计时</a>
+        <a href="2024review.html">年度回顾</a>
+        <a href="wishes.html">祝福墙</a>
+        <a href="games.html" class="active">新年游戏</a>
+    </nav>
+
+    <div class="container games-container">
+        <h1>新年游戏</h1>
+        
+        <div class="games-grid">
+            <div class="game-card" onclick="startGame('puzzle')">
+                <div class="game-icon">🧩</div>
+                <h3>拼图游戏</h3>
+                <p>拼出新年祝福</p>
+            </div>
+            
+            <div class="game-card" onclick="startGame('redPacket')">
+                <div class="game-icon">🧧</div>
+                <h3>抢红包</h3>
+                <p>欢乐抢红包</p>
+            </div>
+            
+            <div class="game-card" onclick="startGame('lantern')">
+                <div class="game-icon">🏮</div>
+                <h3>点亮灯笼</h3>
+                <p>新年点灯笼</p>
+            </div>
+
+            <div class="game-card" onclick="startGame('zodiac')">
+                <div class="game-icon">🐲</div>
+                <h3>生肖记忆</h3>
+                <p>记忆翻牌游戏</p>
+            </div>
+
+            <div class="game-card" onclick="startGame('firecracker')">
+                <div class="game-icon">🧨</div>
+                <h3>鞭炮消消乐</h3>
+                <p>三消除游戏</p>
+            </div>
+
+            <div class="game-card" onclick="startGame('dumpling')">
+                <div class="game-icon">🥟</div>
+                <h3>包饺子</h3>
+                <p>快速包饺子</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="games.js"></script>
+</body>
+</html> 

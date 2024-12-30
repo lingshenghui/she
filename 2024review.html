@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024年度回顾</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <!-- 背景装饰元素 -->
+    <div class="decorations">
+        <div class="lantern left"></div>
+        <div class="lantern right"></div>
+        <div class="fu-character"></div>
+        <div class="spring-character"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <a href="index.html">倒计时</a>
+        <a href="2024review.html" class="active">年度回顾</a>
+        <a href="wishes.html">祝福墙</a>
+        <a href="games.html">新年游戏</a>
+    </nav>
+
+    <div class="container review-container">
+        <h1 class="review-title">2024精彩时刻</h1>
+        
+        <!-- 时间轴 -->
+        <div class="timeline">
+            <div class="timeline-item" onclick="showDetail('jan')">
+                <div class="timeline-date">一月</div>
+                <div class="timeline-content">
+                    <h3>新年伊始</h3>
+                    <p>记录您的2024年第一天...</p>
+                </div>
+            </div>
+            <div class="timeline-item" onclick="showDetail('feb')">
+                <div class="timeline-date">二月</div>
+                <div class="timeline-content">
+                    <h3>春节团圆</h3>
+                    <p>阖家欢乐的春节时光...</p>
+                </div>
+            </div>
+            <!-- 添加更多月份 -->
+        </div>
+
+        <!-- 照片墙 -->
+        <div class="photo-wall">
+            <h2>精彩瞬间</h2>
+            <div class="photo-grid" id="photoGrid">
+                <!-- 照片会通过JS动态添加 -->
+            </div>
+            <input type="file" id="photoUpload" accept="image/*" style="display: none">
+            <button onclick="document.getElementById('photoUpload').click()">上传照片</button>
+        </div>
+    </div>
+
+    <script src="review.js"></script>
+</body>
+</html> 

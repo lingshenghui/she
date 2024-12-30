@@ -1,0 +1,326 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #800000;
+    font-family: 'Microsoft YaHei', sans-serif;
+    overflow-x: hidden; /* 防止水平滚动 */
+}
+
+/* 烟花画布样式 */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: transparent;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+}
+
+/* 主容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 40px; /* 顶部留出导航栏空间 */
+    position: relative;
+    z-index: 1;
+}
+
+/* 新年祝福语样式 */
+.greeting {
+    margin: 50px 0;
+    animation: fadeInDown 1s ease;
+}
+
+.greeting h1 {
+    font-size: 4.5em;
+    color: #FFD700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5),
+        0 0 30px rgba(255, 215, 0, 0.3);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.greeting h2 {
+    font-size: 3.5em;
+    color: #FF0000;
+    text-shadow: 
+        0 0 10px rgba(255, 0, 0, 0.8),
+        0 0 20px rgba(255, 0, 0, 0.5),
+        0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+/* 倒计时样式 */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.time-block {
+    background: rgba(139, 0, 0, 0.6);
+    border: 2px solid #FFD700;
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.3),
+        inset 0 0 15px rgba(255, 215, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
+    margin: 10px;
+}
+
+.time-block span {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5);
+    display: block;
+}
+
+.time-block .label {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 愿望输入区样式 */
+.wish-container {
+    margin: 30px 0;
+}
+
+#wishInput {
+    padding: 12px 25px;
+    width: 300px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    margin-right: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: #800000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #FFA500, #FFD700);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* 修改愿望墙样式 */
+.wish-wall {
+    margin-top: 50px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wish {
+    position: absolute;
+    padding: 10px 20px;
+    background: rgba(255, 215, 0, 0.15);  /* 改为金色背景 */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    color: #FFD700;  /* 文字改为金色 */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    animation: wishFloat 15s linear infinite;  /* 使用新的动画名称 */
+}
+
+/* 添加专门的愿望飘动动画 */
+@keyframes wishFloat {
+    from { transform: translateX(100vw); }
+    to { transform: translateX(-100%); }
+}
+
+/* 保持装饰元素的上下浮动动画不变 */
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* 动画关键帧 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .time-block {
+        min-width: 80px;
+        padding: 10px;
+    }
+    
+    .greeting h1 {
+        font-size: 2.5em;
+    }
+    
+    .greeting h2 {
+        font-size: 2em;
+    }
+} 
+
+/* 装饰元素样式 */
+.decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lantern {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80"><path d="M30,10 L50,30 L50,70 L10,70 L10,30 Z" fill="red" stroke="gold"/></svg>') no-repeat;
+    animation: swing 3s infinite ease-in-out;
+}
+
+.lantern.left {
+    top: 50px;
+    left: 50px;
+}
+
+.lantern.right {
+    top: 50px;
+    right: 50px;
+}
+
+.fu-character {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dy=".35em" fill="gold">福</text></svg>') no-repeat;
+    transform: rotate(-15deg);
+    opacity: 0.8;
+}
+
+.spring-character {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dy=".35em" fill="gold">春</text></svg>') no-repeat;
+    transform: rotate(15deg);
+    opacity: 0.8;
+}
+
+/* 添加灯笼摆动动画 */
+@keyframes swing {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.decorations > div {
+    animation: float 5s infinite ease-in-out;
+} 
+
+/* 音乐控制按钮样式 */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.music-btn {
+    background: rgba(139, 0, 0, 0.8);
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.music-icon {
+    font-size: 1.2em;
+    color: #FFD700;
+    animation: musicRotate 3s linear infinite;
+}
+
+@keyframes musicRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-btn.paused .music-icon {
+    animation-play-state: paused;
+    opacity: 0.5;
+} 
+
+/* 添加提示动画 */
+@keyframes attention {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.music-btn.attention {
+    animation: attention 1s infinite;
+}
+
+.music-btn.attention .music-icon {
+    animation: musicRotate 1s linear infinite;
+} 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年祝福墙</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="wishes-wall.css">
+</head>
+<body>
+    <!-- 背景装饰元素 -->
+    <div class="decorations">
+        <div class="lantern left"></div>
+        <div class="lantern right"></div>
+        <div class="fu-character"></div>
+        <div class="spring-character"></div>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="index.html">倒计时</a>
+        <a href="2024review.html">年度回顾</a>
+        <a href="wishes.html" class="active">祝福墙</a>
+        <a href="games.html">新年游戏</a>
+    </nav>
+
+    <div class="container wishes-container">
+        <h1>新年祝福墙</h1>
+        
+        <!-- 祝福卡片展示区 -->
+        <div class="wishes-grid">
+            <!-- 祝福卡片会动态添加到这里 -->
+        </div>
+
+        <!-- 添加祝福表单 -->
+        <div class="wish-form">
+            <input type="text" id="wishAuthor" placeholder="您的名字" maxlength="20">
+            <textarea id="wishContent" placeholder="写下您的祝福..." maxlength="100"></textarea>
+            <button onclick="addWishCard()">发送祝福</button>
+        </div>
+    </div>
+
+    <script src="wishes.js"></script>
+</body>
+</html> 

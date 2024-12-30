@@ -1,0 +1,81 @@
+/* 导航栏基础样式 */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(139, 0, 0, 0.95); /* 更深的红色背景 */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* 导航链接样式 */
+.nav-bar a {
+    color: #FFD700;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin: 0 15px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-size: 1.1em;
+    font-weight: bold;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+}
+
+/* 鼠标悬停效果 */
+.nav-bar a:hover {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: #FFD700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+/* 当前页面激活状态 */
+.nav-bar a.active {
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    color: #FFF; /* 激活状态文字颜色改为白色 */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 添加装饰效果 */
+.nav-bar::before,
+.nav-bar::after {
+    content: '•';
+    color: #FFD700;
+    font-size: 24px;
+    margin: 0 10px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-bar a {
+        padding: 8px 15px;
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+    
+    .nav-bar::before,
+    .nav-bar::after {
+        display: none;
+    }
+}
+
+/* 添加动画效果 */
+@keyframes navGlow {
+    0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+.nav-bar a.active {
+    animation: navGlow 2s infinite;
+} 

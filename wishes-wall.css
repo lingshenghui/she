@@ -1,0 +1,107 @@
+.wishes-container {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.wish-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFD700;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-author {
+    color: #FFD700;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wish-content {
+    color: #fff;
+    line-height: 1.6;
+}
+
+.wish-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid #FFD700;
+}
+
+.wish-form input,
+.wish-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.wish-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* 添加提示框样式 */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 1px solid #FFD700;
+    animation: fadeInOut 3s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    15% { opacity: 1; transform: translate(-50%, 0); }
+    85% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* 添加点赞按钮样式 */
+.like-btn {
+    background: none;
+    border: none;
+    color: #FFD700;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    transition: transform 0.3s;
+}
+
+.like-btn:hover {
+    transform: scale(1.2);
+}
+
+/* 添加卡片底部样式 */
+.wish-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+} 

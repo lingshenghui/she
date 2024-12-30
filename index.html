@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025新年倒计时</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+    <!-- 添加导航栏 -->
+    <nav class="nav-bar">
+        <a href="index.html" class="active">倒计时</a>
+        <a href="2024review.html">年度回顾</a>
+        <a href="wishes.html">祝福墙</a>
+        <a href="games.html">新年游戏</a>
+    </nav>
+
+    <!-- 背景装饰元素 -->
+    <div class="decorations">
+        <div class="lantern left"></div>
+        <div class="lantern right"></div>
+        <div class="fu-character"></div>
+        <div class="spring-character"></div>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop>
+        <source src="audio/gongxi.mp3" type="audio/mpeg">
+        <source src="https://music.163.com/song/media/outer/url?id=5279729.mp3" type="audio/mpeg">
+        <source src="https://music.163.com/song/media/outer/url?id=191232.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 音乐控制按钮 -->
+    <div class="music-control">
+        <button id="musicToggle" class="music-btn">
+            <span class="music-icon">🎵</span>
+        </button>
+    </div>
+
+    <!-- 背景烟花效果容器 -->
+    <canvas id="fireworks"></canvas>
+
+    <!-- 主要内容区 -->
+    <div class="container">
+        <!-- 新年祝福语 -->
+        <div class="greeting">
+            <h1>Happy New Year</h1>
+            <h2>2025</h2>
+        </div>
+
+        <!-- 倒计时显示区 -->
+        <div class="countdown">
+            <div class="time-block">
+                <span id="days">00</span>
+                <span class="label">天</span>
+            </div>
+            <div class="time-block">
+                <span id="hours">00</span>
+                <span class="label">时</span>
+            </div>
+            <div class="time-block">
+                <span id="minutes">00</span>
+                <span class="label">分</span>
+            </div>
+            <div class="time-block">
+                <span id="seconds">00</span>
+                <span class="label">秒</span>
+            </div>
+        </div>
+
+        <!-- 新年愿望输入区 -->
+        <div class="wish-container">
+            <input type="text" id="wishInput" placeholder="写下你的新年愿望...">
+            <button onclick="addWish()">发送祝福</button>
+        </div>
+
+        <!-- 飘动的新年愿望墙 -->
+        <div class="wish-wall" id="wishWall"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="fireworks.js"></script>
+    <script src="countdown.js"></script>
+    <script src="music.js"></script>
+</body>
+</html> 
