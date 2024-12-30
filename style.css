@@ -324,3 +324,21 @@ button:hover {
 .music-btn.attention .music-icon {
     animation: musicRotate 1s linear infinite;
 } 
+
+/* 音乐切换提示 */
+.music-btn::after {
+    content: '双击切歌';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #FFD700;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.music-btn:hover::after {
+    opacity: 1;
+} 
