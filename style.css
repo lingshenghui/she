@@ -456,17 +456,46 @@ img, video, audio {
         -webkit-tap-highlight-color: transparent;
     }
     
+    /* 减少动画和特效 */
     .decorations {
-        opacity: 0.5; /* 降低装饰元素透明度提升性能 */
-    }
-    
-    /* 减少动画复杂度 */
-    .wish {
-        animation-duration: 20s;
+        opacity: 0.3;
+        display: none; /* 在移动端隐藏装饰元素 */
     }
     
     /* 优化滚动性能 */
     body {
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
     }
+    
+    /* 减少阴影和模糊效果 */
+    .time-block {
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+    
+    /* 简化动画 */
+    .wish {
+        animation-duration: 20s;
+        animation-timing-function: linear;
+    }
+    
+    /* 优化图片 */
+    img {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+}
+
+/* 添加错误提示样式 */
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
 } 
