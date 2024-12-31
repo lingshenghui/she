@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2025新年倒计时和祝福">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="nav.css" as="style">
+    <link rel="preload" href="audio/gongxi.mp3" as="audio">
+    
+    <link rel="dns-prefetch" href="//music.163.com">
+    
     <title>2025新年倒计时</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
+    
+    <script>
+        window.addEventListener('error', function(e) {
+            console.error('Resource loading error:', e.target.src || e.target.href);
+        }, true);
+    </script>
 </head>
 <body>
+    <!-- 添加加载指示器 -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
     <!-- 添加导航栏 -->
     <nav class="nav-bar">
         <a href="index.html" class="active">倒计时</a>
@@ -83,5 +103,6 @@
     <script src="fireworks.js"></script>
     <script src="countdown.js"></script>
     <script src="music.js"></script>
+    <script src="loading.js"></script>
 </body>
 </html> 

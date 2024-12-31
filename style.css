@@ -415,3 +415,58 @@ button:hover {
 .music-btn:hover::after {
     opacity: 1;
 } 
+
+/* 添加加载指示器样式 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(139, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #FFD700;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 优化图片和媒体加载 */
+img, video, audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 优化移动端性能 */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .decorations {
+        opacity: 0.5; /* 降低装饰元素透明度提升性能 */
+    }
+    
+    /* 减少动画复杂度 */
+    .wish {
+        animation-duration: 20s;
+    }
+    
+    /* 优化滚动性能 */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+} 

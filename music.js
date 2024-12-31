@@ -14,6 +14,28 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     let currentMusicIndex = 0;
     
+    // 音频加载错误重试机制
+    let retryCount = 0;
+    const maxRetries = 3;
+    
+    function loadAudioWithRetry(src) {
+        bgMusic.src = src;
+        bgMusic.load();
+        
+        return new Promise((resolve, reject) => {
+            bgMusic.oncanplaythrough = resolve;
+            bgMusic.onerror = () => {
+                if (retryCount < maxRetries) {
+                    retryCount++;
+                    console.log(`重试加载音频 (${retryCount}/${maxRetries})`);
+                    setTimeout(() => loadAudioWithRetry(src), 1000);
+                } else {
+                    reject(new Error('音频加载失败'));
+                }
+            };
+        });
+    }
+    
     // 尝试自动播放
     function tryAutoplay() {
         bgMusic.play().then(() => {
