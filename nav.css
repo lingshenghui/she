@@ -57,15 +57,32 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px 0;
+    }
+    
     .nav-bar a {
-        padding: 8px 15px;
+        padding: 8px 12px;
         margin: 0 5px;
         font-size: 0.9em;
     }
     
+    /* 隐藏装饰符号 */
     .nav-bar::before,
     .nav-bar::after {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        padding: 8px 0;
+    }
+    
+    .nav-bar a {
+        padding: 6px 10px;
+        margin: 0 3px;
+        font-size: 0.85em;
     }
 }
 

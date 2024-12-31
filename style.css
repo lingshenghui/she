@@ -190,21 +190,94 @@ button:hover {
 @media (max-width: 768px) {
     .countdown {
         flex-wrap: wrap;
+        gap: 10px;
     }
     
     .time-block {
-        min-width: 80px;
+        min-width: 70px;
         padding: 10px;
     }
     
+    .time-block span {
+        font-size: 2em;
+    }
+    
+    .time-block .label {
+        font-size: 1em;
+    }
+    
     .greeting h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     
     .greeting h2 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
-} 
+    
+    .wish-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    #wishInput {
+        width: 90%;
+        max-width: 300px;
+        margin: 0;
+    }
+    
+    .lantern {
+        width: 40px;
+        height: 60px;
+    }
+    
+    .lantern.left {
+        top: 30px;
+        left: 20px;
+    }
+    
+    .lantern.right {
+        top: 30px;
+        right: 20px;
+    }
+    
+    .fu-character,
+    .spring-character {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .music-control {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .music-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* 添加小屏幕设备的适配 */
+@media (max-width: 480px) {
+    .container {
+        padding: 60px 10px 20px;
+    }
+    
+    .greeting h1 {
+        font-size: 1.8em;
+    }
+    
+    .greeting h2 {
+        font-size: 1.5em;
+    }
+    
+    .time-block {
+        min-width: 60px;
+        padding: 8px;
+    }
+}
 
 /* 装饰元素样式 */
 .decorations {

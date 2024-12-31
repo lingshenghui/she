@@ -104,4 +104,31 @@
     margin-top: 15px;
     padding-top: 10px;
     border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* 添加移动端祝福墙样式 */
+@media (max-width: 768px) {
+    .wishes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .wish-form {
+        padding: 15px;
+    }
+    
+    .wish-form input,
+    .wish-form textarea {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishes-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
 } 
